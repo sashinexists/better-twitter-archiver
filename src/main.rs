@@ -9,7 +9,7 @@ use twitter_v2::{Tweet, TwitterApi, User};
 #[tokio::main]
 async fn main() {
     dotenv().ok();
-    let user = get_user_by_twitter_handle("sashintweets").await;
+    let user = get_user_by_twitter_handle("yudapearl").await;
     let tweets: Vec<Tweet> = match fs::read_to_string("tweets.json") {
         Ok(tweets) => {
             println!(
