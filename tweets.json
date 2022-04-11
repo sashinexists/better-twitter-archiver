@@ -3,60 +3,119 @@
     "id": "1513263806650019843",
     "text": "@pedrohcgs One would assume that the \"credibility revolution\" would change this educational misdirection. Why hasn't it? Ans. Because economists are still refusing the First Law of Causal Inference https://t.co/etASSEk4Or, leaving econ. education in want of foundation.",
     "author_id": "3363584909",
-    "created_at": "2022-04-10T21:13:01Z"
+    "conversation_id": "1431757821578670082",
+    "created_at": "2022-04-10T21:13:01Z",
+    "referenced_tweets": [{ "type": "replied_to", "id": "1431760680399491079" }]
   },
   {
     "id": "1513258824093745153",
     "text": "Poor GiGi Hadid, she is being pressured again to decide if Tel-Aviv is, or isn't stolen Arab land, when all she wanted to do is create a myth that a non-negligible fraction of Palestinians can stomach the word \"co-existence.\"",
     "author_id": "3363584909",
-    "created_at": "2022-04-10T20:53:13Z"
+    "context_annotations": [
+      {
+        "domain": {
+          "id": "10",
+          "name": "Person",
+          "description": "Named people in the world like Nelson Mandela"
+        },
+        "entity": {
+          "id": "809503919814504448",
+          "name": "Gigi Hadid",
+          "description": "Gigi Hadid"
+        }
+      },
+      {
+        "domain": {
+          "id": "58",
+          "name": "Entertainment Personality",
+          "description": "An entertainment personality in the world, like Anderson Cooper or Miranda Sings"
+        },
+        "entity": {
+          "id": "809503919814504448",
+          "name": "Gigi Hadid",
+          "description": "Gigi Hadid"
+        }
+      }
+    ],
+    "conversation_id": "1513258823309414404",
+    "created_at": "2022-04-10T20:53:13Z",
+    "referenced_tweets": [{ "type": "replied_to", "id": "1513258823309414404" }]
   },
   {
     "id": "1513258823309414404",
     "text": "Anti-Israel Celeb Blasted by Palestinians for Condemning Tel Aviv Terror Attack https://t.co/904qo6zPeF",
     "author_id": "3363584909",
+    "conversation_id": "1513258823309414404",
     "created_at": "2022-04-10T20:53:13Z"
   },
   {
     "id": "1513245415814008833",
     "text": "Every once in a while, a reader \"likes\" an old post of mine, and tempts me to re-read and check if my thinking hasn't changed. This Quora post, on econometrics, statistics and machine learning reaffirms my current thinking, with very little to add. https://t.co/dNC8tP81GO",
     "author_id": "3363584909",
-    "created_at": "2022-04-10T19:59:56Z"
+    "context_annotations": [
+      {
+        "domain": {
+          "id": "66",
+          "name": "Interests and Hobbies Category",
+          "description": "A grouping of interests and hobbies entities, like Novelty Food or Destinations"
+        },
+        "entity": {
+          "id": "898661583827615744",
+          "name": "Machine learning",
+          "description": "Machine Learning"
+        }
+      }
+    ],
+    "conversation_id": "1513245415814008833",
+    "created_at": "2022-04-10T19:59:56Z",
+    "referenced_tweets": [{ "type": "quoted", "id": "1147148535910916096" }]
   },
   {
     "id": "1513188421149204489",
     "text": "battlegrounds of harassment and intimidation. \nSo, please, not another useless \"task force\" on antisemitism, like the one convened at U. of Toronto https://t.co/dJXllZDuGx\nStart fighting Zionophobia with the tools, budget and personnel you already have to fight Islamophobia.\n2/2",
     "author_id": "3363584909",
-    "created_at": "2022-04-10T16:13:27Z"
+    "conversation_id": "1513188418943021059",
+    "created_at": "2022-04-10T16:13:27Z",
+    "referenced_tweets": [{ "type": "replied_to", "id": "1513188418943021059" }]
   },
   {
     "id": "1513188418943021059",
     "text": "I strongly urge all college presidents attending the Hillel - @AJCGlobal summit on antisemitism https://t.co/laAyJwD8zj to pay good attention to this video, and to understand that, unless they nip this forum of fascism in the bud, college campuses will turn into bloody \n1/2 https://t.co/wf7GNJp6uE",
     "author_id": "3363584909",
-    "created_at": "2022-04-10T16:13:27Z"
+    "conversation_id": "1513188418943021059",
+    "created_at": "2022-04-10T16:13:27Z",
+    "referenced_tweets": [{ "type": "quoted", "id": "1512906344269070338" }]
   },
   {
     "id": "1513160612473278468",
     "text": "Not to be missed. @blakeflayton speaking  about #antisemitism on college campuses. Opps, I almost fell into this trap again. No! its about #Zionophobia on college campuses, i.e., the pseudo-respectable side of antisemitism, the side that truly counts these days. https://t.co/2fvByKSMjq",
     "author_id": "3363584909",
-    "created_at": "2022-04-10T14:22:57Z"
+    "conversation_id": "1513160612473278468",
+    "created_at": "2022-04-10T14:22:57Z",
+    "referenced_tweets": [{ "type": "quoted", "id": "1512584643022782465" }]
   },
   {
     "id": "1512975820452601860",
     "text": "@RobertoCarlosF @achavito @wsosaescudero Stock and Watson's book was reviewed here  https://t.co/CEpVusa5eB. However, unlike authors of the other books reviewed, Stock and Watson consulted with me on possible improvements, and I assume their revised editions are free of inaccuracies.",
     "author_id": "3363584909",
-    "created_at": "2022-04-10T02:08:39Z"
+    "conversation_id": "1512893411044605957",
+    "created_at": "2022-04-10T02:08:39Z",
+    "referenced_tweets": [{ "type": "replied_to", "id": "1512967308704104451" }]
   },
   {
     "id": "1512973410233552899",
     "text": "@achavito @wsosaescudero Is it available in English?",
     "author_id": "3363584909",
-    "created_at": "2022-04-10T01:59:05Z"
+    "conversation_id": "1512893411044605957",
+    "created_at": "2022-04-10T01:59:05Z",
+    "referenced_tweets": [{ "type": "replied_to", "id": "1512967322293657611" }]
   },
   {
     "id": "1512971386788016138",
     "text": "I am not sure which verdict would be harsher on @KenRoth: \"KR is an anti-Semite\" or KR is a Zionophobe\". The former evokes stories of unfortunate upbringing, broken family, etc. The latter are calculating eliminationists, who know the genocidal consequences of their agenda. https://t.co/7T4E42dLwr",
     "author_id": "3363584909",
-    "created_at": "2022-04-10T01:51:02Z"
+    "conversation_id": "1512971386788016138",
+    "created_at": "2022-04-10T01:51:02Z",
+    "referenced_tweets": [{ "type": "quoted", "id": "1512843603797843971" }]
   }
 ]

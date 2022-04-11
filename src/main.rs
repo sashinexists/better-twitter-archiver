@@ -1,7 +1,4 @@
 use dotenvy::dotenv;
-use futures::executor::block_on;
-
-use core::fmt::Debug;
 
 use serde_json;
 use std::fs::{self};
@@ -22,7 +19,14 @@ async fn get_tweets_from_user(user: &User) -> Vec<Tweet> {
     load_api()
         .await
         .get_user_tweets(user.id)
-        .tweet_fields([TweetField::AuthorId, TweetField::CreatedAt])
+        .tweet_fields([
+            TweetField::Attachments,
+            TweetField::ContextAnnotations,
+            TweetField::ReferencedTweets,
+            TweetField::ConversationId,
+            TweetField::AuthorId,
+            TweetField::CreatedAt,
+        ])
         .send()
         .await
         .expect("Users tweets net loading")
@@ -30,11 +34,19 @@ async fn get_tweets_from_user(user: &User) -> Vec<Tweet> {
         .expect("Failure to open option<Vec<Tweet>>")
 }
 
+#[allow(dead_code)]
 async fn get_tweet_by_id(id: u64) -> Tweet {
     load_api()
         .await
         .get_tweet(id)
-        .tweet_fields([TweetField::AuthorId, TweetField::CreatedAt])
+        .tweet_fields([
+            TweetField::Attachments,
+            TweetField::ContextAnnotations,
+            TweetField::ReferencedTweets,
+            TweetField::ConversationId,
+            TweetField::AuthorId,
+            TweetField::CreatedAt,
+        ])
         .send()
         .await
         .expect("this tweet should exist")
