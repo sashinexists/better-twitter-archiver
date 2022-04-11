@@ -9,10 +9,27 @@ use twitter_v2::{Tweet, TwitterApi, User};
 #[tokio::main]
 async fn main() {
     dotenv().ok();
-    let user = get_user_by_twitter_handle("yudapearl").await;
-    let tweets = get_tweets_from_user(&user).await;
-    let tweets_json: String = serde_json::to_string(&tweets).expect("Failed to deserialise tweets");
-    fs::write("tweets.json", tweets_json).expect("Failed to write to tweets.json");
+    let user = get_user_by_twitter_handle("sashintweets").await;
+    let tweets: Vec<Tweet> = match fs::read_to_string("tweets.json") {
+        Ok(tweets) => {
+            println!(
+                "Successfully read tweets.json. \n\nContent is as follows:\n\n{}",
+                &tweets
+            );
+            serde_json::from_str(&tweets).expect("Failed to parse file tweets.json")
+        }
+        Err(_error) => {
+            println!("Loading tweets from API...");
+            let tweets: Vec<Tweet> = get_tweets_from_user(&user).await;
+            fs::write(
+                "tweets.json",
+                serde_json::to_string(&tweets).expect("Failed to parse tweets from API into JSON"),
+            )
+            .expect("Failed to write to tweets.json");
+            println!("Saved tweets to new file tweets.json");
+            tweets
+        }
+    };
 }
 
 async fn get_tweets_from_user(user: &User) -> Vec<Tweet> {
@@ -21,7 +38,6 @@ async fn get_tweets_from_user(user: &User) -> Vec<Tweet> {
         .get_user_tweets(user.id)
         .tweet_fields([
             TweetField::Attachments,
-            TweetField::ContextAnnotations,
             TweetField::ReferencedTweets,
             TweetField::ConversationId,
             TweetField::AuthorId,
