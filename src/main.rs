@@ -6,10 +6,11 @@ use twitter_v2::authorization::BearerToken;
 use twitter_v2::query::{TweetField, UserField};
 use twitter_v2::{Tweet, TwitterApi, User};
 
+const TWITTER_HANDLE: &str = "yudapearl";
 #[tokio::main]
 async fn main() {
     dotenv().ok();
-    let user = get_user_by_twitter_handle("yudapearl").await;
+    let user = get_user_by_twitter_handle(TWITTER_HANDLE).await;
     let tweets: Vec<Tweet> = match fs::read_to_string("tweets.json") {
         Ok(tweets) => {
             println!(
