@@ -67,10 +67,11 @@ async fn load_conversations(tweets: Vec<Tweet>) -> Vec<Vec<Tweet>> {
         }
         Err(_error) => {
             println!("Loading conversations from API");
-            let conversations = tweets
-                .into_iter()
-                .map(|tweet| block_on(get_twitter_conversation_from_tweet(tweet)))
-                .collect();
+            let conversations_stream = stream::iter(tweets);
+            let conversations_then =
+                conversations_stream.then(|tweet| get_twitter_conversation_from_tweet(tweet));
+            let conversations = conversations_then.collect::<Vec<_>>().await;
+
             fs::write(
                 "conversations.json",
                 serde_json::to_string(&conversations)
@@ -82,8 +83,6 @@ async fn load_conversations(tweets: Vec<Tweet>) -> Vec<Vec<Tweet>> {
     }
 }
 
-//work on this, it will need some recursion
-//update... and it looks like you will need to look into async recursion
 #[async_recursion]
 async fn get_twitter_conversation_from_tweet(tweet: Tweet) -> Vec<Tweet> {
     let mut output = vec![tweet];
@@ -113,7 +112,7 @@ async fn get_tweets_from_query(query: &str) -> Vec<Tweet> {
     load_api()
         .await
         .get_tweets_search_recent(query)
-        .max_results(5)
+        .max_results(10)
         .tweet_fields([
             TweetField::Attachments,
             TweetField::ReferencedTweets,
@@ -132,7 +131,7 @@ async fn get_tweets_from_user(user: &User) -> Vec<Tweet> {
     load_api()
         .await
         .get_user_tweets(user.id)
-        .max_results(5) //this line gets the max results
+        .max_results(10) //this line gets the max results
         .tweet_fields([
             TweetField::Attachments,
             TweetField::ReferencedTweets,
