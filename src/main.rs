@@ -1,10 +1,10 @@
 use dotenvy::dotenv;
 
+use futures::executor::block_on;
+use futures::stream::{self, StreamExt};
 use serde_json;
-use std::any::Any;
 use std::fs::{self};
-use twitter_v2::authorization::{BearerToken, Oauth2Token};
-use twitter_v2::data::ReferencedTweet;
+use twitter_v2::authorization::BearerToken;
 use twitter_v2::data::ReferencedTweetKind::RepliedTo;
 use twitter_v2::query::{TweetField, UserField};
 use twitter_v2::{Tweet, TwitterApi, User};
@@ -15,13 +15,34 @@ const TWITTER_HANDLE: &str = "yudapearl";
 #[tokio::main]
 async fn main() {
     dotenv().ok();
-    let user = get_user_by_twitter_handle(TWITTER_HANDLE).await;
-    let tweets: Vec<Tweet> = match fs::read_to_string("tweets.json") {
+    let user = load_user().await;
+    let tweets: Vec<Tweet> = load_tweets(&user).await;
+    let conversations = load_conversations(tweets).await;
+}
+
+async fn load_user() -> User {
+    match fs::read_to_string("user.json") {
+        Ok(user) => {
+            println!("Successfully read user.json");
+            serde_json::from_str(&user).expect("Failed to parse file user.json")
+        }
+        Err(_error) => {
+            println!("Loading User from API");
+            let user = get_user_by_twitter_handle(TWITTER_HANDLE).await;
+            fs::write(
+                "user.json",
+                serde_json::to_string(&user).expect("Failed to parse user from API to JSON"),
+            )
+            .expect("Failed to write file user.json");
+            user
+        }
+    }
+}
+
+async fn load_tweets(user: &User) -> Vec<Tweet> {
+    match fs::read_to_string("tweets.json") {
         Ok(tweets) => {
-            println!(
-                "Successfully read tweets.json. \n\nContent is as follows:\n\n{}",
-                &tweets
-            );
+            println!("Successfully read tweets.json.");
             serde_json::from_str(&tweets).expect("Failed to parse file tweets.json")
         }
         Err(_error) => {
@@ -35,16 +56,30 @@ async fn main() {
             println!("Saved tweets to new file tweets.json");
             tweets
         }
-    };
-    //let conversation_id = "1513791040263651330";
-    let conversation =
-        get_twitter_conversation_from_tweet(get_tweet_by_id(1514707895992029195).await).await;
-    println!("{:?}", &conversation);
-    fs::write(
-        "conversation.json",
-        serde_json::to_string(&conversation).expect("Failed to parse tweets from API into JSON"),
-    )
-    .expect("Failed to write to conversation.json");
+    }
+}
+
+async fn load_conversations(tweets: Vec<Tweet>) -> Vec<Vec<Tweet>> {
+    match fs::read_to_string("conversations.json") {
+        Ok(conversations) => {
+            println!("Successully read conversations.json");
+            serde_json::from_str(&conversations).expect("Failed to parse file conversations.json;")
+        }
+        Err(_error) => {
+            println!("Loading conversations from API");
+            let conversations = tweets
+                .into_iter()
+                .map(|tweet| block_on(get_twitter_conversation_from_tweet(tweet)))
+                .collect();
+            fs::write(
+                "conversations.json",
+                serde_json::to_string(&conversations)
+                    .expect("Failed to parse conversations from API into a JSON file"),
+            )
+            .expect("Failed to write to conversations.json");
+            conversations
+        }
+    }
 }
 
 //work on this, it will need some recursion
@@ -65,6 +100,7 @@ async fn get_twitter_conversation_from_tweet(tweet: Tweet) -> Vec<Tweet> {
                 output.append(&mut conversation);
                 output
             } else {
+                output.reverse();
                 output
             }
         }
@@ -72,12 +108,12 @@ async fn get_twitter_conversation_from_tweet(tweet: Tweet) -> Vec<Tweet> {
     }
 }
 
-//maybe generalised this to get tweets from query
+#[allow(dead_code)]
 async fn get_tweets_from_query(query: &str) -> Vec<Tweet> {
     load_api()
         .await
         .get_tweets_search_recent(query)
-        .max_results(10)
+        .max_results(5)
         .tweet_fields([
             TweetField::Attachments,
             TweetField::ReferencedTweets,
@@ -96,7 +132,7 @@ async fn get_tweets_from_user(user: &User) -> Vec<Tweet> {
     load_api()
         .await
         .get_user_tweets(user.id)
-        .max_results(10) //this line gets the max results
+        .max_results(5) //this line gets the max results
         .tweet_fields([
             TweetField::Attachments,
             TweetField::ReferencedTweets,
@@ -111,7 +147,6 @@ async fn get_tweets_from_user(user: &User) -> Vec<Tweet> {
         .expect("Failure to open option<Vec<Tweet>>")
 }
 
-#[allow(dead_code)]
 async fn get_tweet_by_id(id: u64) -> Tweet {
     load_api()
         .await
