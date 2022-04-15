@@ -1,5 +1,45 @@
 [
   {
+    "id": "1513791040263651330",
+    "text": "Strange, it feels like I begin to understand Spanish. https://t.co/37rBI1wu1y",
+    "author_id": "3363584909",
+    "conversation_id": "1513791040263651330",
+    "created_at": "2022-04-12T08:08:03Z",
+    "referenced_tweets": [{ "type": "quoted", "id": "1513504573733888001" }]
+  },
+  {
+    "id": "1513788307326480388",
+    "text": "And I was likewise excited to speak to a community of causal inference researchers that grew to such size, and bloomed in such colorful mosaic of young new leaders who are actively exploring the second phase of the causal revolution. It might be even more exciting than the first. https://t.co/plHvLPY0bA",
+    "author_id": "3363584909",
+    "conversation_id": "1513788307326480388",
+    "created_at": "2022-04-12T07:57:11Z",
+    "referenced_tweets": [{ "type": "quoted", "id": "1513595889759125511" }]
+  },
+  {
+    "id": "1513784026770731011",
+    "text": "The murder in Tel Aviv has inspired several poetic expressions of Palestinian mentality, this one tops them all. https://t.co/Jv2LkhEgev",
+    "author_id": "3363584909",
+    "conversation_id": "1513784026770731011",
+    "created_at": "2022-04-12T07:40:11Z",
+    "referenced_tweets": [{ "type": "quoted", "id": "1513447341587587076" }]
+  },
+  {
+    "id": "1513611460940771328",
+    "text": "Excited to hear of your new appointment, @noatishby, and looking forward to assist you\nin coordinating the activities of the many new  Zionist organizations that have emerged recently, and are working tirelessly toward re-invigorating the inspirational power of Israel. https://t.co/ocapnKO2xP",
+    "author_id": "3363584909",
+    "conversation_id": "1513611460940771328",
+    "created_at": "2022-04-11T20:14:28Z",
+    "referenced_tweets": [{ "type": "quoted", "id": "1513546027005001733" }]
+  },
+  {
+    "id": "1513606396662616065",
+    "text": "RT @elenadata: Very excited to be at my first in-person conference since the pandemic started. Excellent talks by @yudapearl and @AlisonGop…",
+    "author_id": "3363584909",
+    "conversation_id": "1513606396662616065",
+    "created_at": "2022-04-11T19:54:21Z",
+    "referenced_tweets": [{ "type": "retweeted", "id": "1513595889759125511" }]
+  },
+  {
     "id": "1513558413757755395",
     "text": "@RunnerVgn Please help me relate to my Quora answer. I don't believe I've used the term \"outdated subfield\" .",
     "author_id": "3363584909",
@@ -117,45 +157,5 @@
     "conversation_id": "1512893411044605957",
     "created_at": "2022-04-10T01:16:03Z",
     "referenced_tweets": [{ "type": "replied_to", "id": "1512893411044605957" }]
-  },
-  {
-    "id": "1512927862386421764",
-    "text": "@soboleffspaces Why not RCTs? Because they do not need to know where Z sits in the DAG. All they need, for their purpose, is to assure that Z correlates with Y and is not affected by X. Bingo, their aim will be fulfilled (precision) w/o compromising bias in ACE.",
-    "author_id": "3363584909",
-    "conversation_id": "1512781538676527106",
-    "created_at": "2022-04-09T22:58:05Z",
-    "referenced_tweets": [{ "type": "replied_to", "id": "1512884541354311680" }]
-  },
-  {
-    "id": "1512880070871826432",
-    "text": "@soboleffspaces The needed knowledge comes from P(z), namely our assessment of the percentage of z's in the target population, hopefully confirmed by a large survey. It's no different than the knowledge needed for adjustment in observational studies. Where lies the problem?",
-    "author_id": "3363584909",
-    "conversation_id": "1512781538676527106",
-    "created_at": "2022-04-09T19:48:11Z",
-    "referenced_tweets": [{ "type": "replied_to", "id": "1512834841175240706" }]
-  },
-  {
-    "id": "1512832844925595649",
-    "text": "@soboleffspaces I do not know what FDA aims to achieve by \"adjustment for prognostic baseline covariates,\" because they do not say formally. I assume the purpose is to improve precision, not bias. I do not see why we are on square 1. I think we are on square 64 -- all is clear.",
-    "author_id": "3363584909",
-    "conversation_id": "1512781538676527106",
-    "created_at": "2022-04-09T16:40:31Z",
-    "referenced_tweets": [{ "type": "replied_to", "id": "1512828652177670144" }]
-  },
-  {
-    "id": "1512823824961589248",
-    "text": "New acrobatics! @KenRoth quotes Zionophobic views of JVP ex-Jews to exonerate himself from charges of antisemitism. You are forgiven, Ken. History will judge you by your actions, their consequences, and the logic of your slander, not by labels you are trying so hard to dodge. https://t.co/UcAvvKZRiX",
-    "author_id": "3363584909",
-    "conversation_id": "1512823824961589248",
-    "created_at": "2022-04-09T16:04:41Z",
-    "referenced_tweets": [{ "type": "quoted", "id": "1512717700363137027" }]
-  },
-  {
-    "id": "1512814776442793985",
-    "text": "and their century-old eliminationist theology that you let off the hook when you hide behind the words \"senseless\" or \"cowardice\" or \"not helping peace\", etc, as if you never heard about the Middle East before. You shouldn't let them think you are as naïve as John Kerry was.\n2/2",
-    "author_id": "3363584909",
-    "conversation_id": "1512814774605680642",
-    "created_at": "2022-04-09T15:28:44Z",
-    "referenced_tweets": [{ "type": "replied_to", "id": "1512814775582953475" }]
   }
 ]
