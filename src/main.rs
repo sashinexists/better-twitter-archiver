@@ -3,6 +3,7 @@ use dotenvy::dotenv;
 use futures::executor::block_on;
 use futures::stream::{self, StreamExt};
 use serde_json;
+use std::any::Any;
 use std::fs::{self};
 use twitter_v2::authorization::BearerToken;
 use twitter_v2::data::ReferencedTweetKind::RepliedTo;
@@ -93,7 +94,13 @@ async fn get_twitter_conversation_from_tweet(tweet: Tweet) -> Vec<Tweet> {
                 .any(|tweet| tweet.kind == RepliedTo)
             {
                 //you don't want this to be index 0 but rather more precise
-                let replied_to: Tweet = get_tweet_by_id(referenced_tweets[0].id.as_u64()).await;
+                let replied_to_id = referenced_tweets
+                    .iter()
+                    .find(|tweet| tweet.kind == RepliedTo)
+                    .expect("Failed to find replied to tweet")
+                    .id
+                    .as_u64();
+                let replied_to: Tweet = get_tweet_by_id(replied_to_id).await;
                 let mut conversation: Vec<Tweet> =
                     get_twitter_conversation_from_tweet(replied_to).await;
                 output.append(&mut conversation);
@@ -152,7 +159,6 @@ async fn get_tweet_by_id(id: u64) -> Tweet {
         .get_tweet(id)
         .tweet_fields([
             TweetField::Attachments,
-            TweetField::ContextAnnotations,
             TweetField::ReferencedTweets,
             TweetField::ConversationId,
             TweetField::AuthorId,

@@ -1,6 +1,66 @@
 [
   [
     {
+      "id": "1514929280030961665",
+      "text": "delivered you from Egypt, from the house of bondage.\" Modern translation: \"If you forget  history, you'll forget me -- your sense of right and wrong.\"\nHappy Passover.\nNext year in Jerusalem!",
+      "author_id": "3363584909",
+      "conversation_id": "1514929278923640836",
+      "created_at": "2022-04-15T11:31:01Z",
+      "referenced_tweets": [
+        { "type": "replied_to", "id": "1514929278923640836" }
+      ]
+    },
+    {
+      "id": "1514929278923640836",
+      "text": "Dear readers,\nI'll be taken a couple of days off Twitter, to celebrate Passover with my family. In addition to symbolizing freedom, renewal and hope, Passover reminds us that humans are historically driven animals. As the First Commandment says:\n\"I am your Lord your God, who\n1/2",
+      "author_id": "3363584909",
+      "conversation_id": "1514929278923640836",
+      "created_at": "2022-04-15T11:31:00Z"
+    }
+  ],
+  [
+    {
+      "id": "1514929278923640836",
+      "text": "Dear readers,\nI'll be taken a couple of days off Twitter, to celebrate Passover with my family. In addition to symbolizing freedom, renewal and hope, Passover reminds us that humans are historically driven animals. As the First Commandment says:\n\"I am your Lord your God, who\n1/2",
+      "author_id": "3363584909",
+      "conversation_id": "1514929278923640836",
+      "created_at": "2022-04-15T11:31:00Z"
+    }
+  ],
+  [
+    {
+      "id": "1514924625628606469",
+      "text": "Decades of lop-sided press coverage of the conflict gave Palestinians the idea that Western readers are stupid enough to believe that Israel is interested in escalating tensions on the holidays, even \"to perpetrate a massacre\"-- no less. Western readers can swallow elephants. https://t.co/JbThFaaWjJ",
+      "author_id": "3363584909",
+      "conversation_id": "1514924625628606469",
+      "created_at": "2022-04-15T11:12:31Z",
+      "referenced_tweets": [{ "type": "quoted", "id": "1514863994040897542" }]
+    }
+  ],
+  [
+    {
+      "id": "1514916131298942980",
+      "text": "Their song is ringing in my ears:\n\"And our footsteps testify: We are here!\"\nThey were there! https://t.co/0TOaXvscLh",
+      "author_id": "3363584909",
+      "conversation_id": "1514916131298942980",
+      "created_at": "2022-04-15T10:38:46Z",
+      "referenced_tweets": [{ "type": "quoted", "id": "1514914318990643208" }]
+    }
+  ],
+  [
+    {
+      "id": "1514914715423543298",
+      "text": "RT @quantumciaran: 🚨 Job alert 🚨 \nThe new causal inference lab @SpotifyResearch is hiring research scientists! Come help us push the state-…",
+      "author_id": "3363584909",
+      "conversation_id": "1514914715423543298",
+      "created_at": "2022-04-15T10:33:08Z",
+      "referenced_tweets": [
+        { "type": "retweeted", "id": "1514673277427494912" }
+      ]
+    }
+  ],
+  [
+    {
       "id": "1514767876086894593",
       "text": "@AdanZBecerra1 Thanks for making my day, but it wasn't really my\nidea. DAGs were created by the mind so that we can see the world better, or, putting it differently, so that we can \"understand\" the world better; \"seeing\" is for the birds, and for deep learning folks.",
       "author_id": "3363584909",
@@ -63,16 +123,6 @@
       "id": "1514623269986619397",
       "text": "@dylanarmbruste3 @yudapearl This is exactly what happened during my second lecture introductory statistics. I asked that question, prof said: \"that's causal inference, we don't cover that in this course.\" \n\nThat was the end of that. Pure frequentism from there on out. Bayes was never even mentioned.",
       "author_id": "1106953039666167809",
-      "context_annotations": [
-        {
-          "domain": {
-            "id": "30",
-            "name": "Entities [Entity Service]",
-            "description": "Entity Service top level domain, every item that is in Entity Service should be in this domain"
-          },
-          "entity": { "id": "1237095288671596545", "name": "Mathematics" }
-        }
-      ],
       "conversation_id": "1514539904750927875",
       "created_at": "2022-04-14T15:15:02Z",
       "referenced_tweets": [
@@ -136,85 +186,6 @@
       "conversation_id": "1514633808816926721",
       "created_at": "2022-04-14T15:56:55Z",
       "referenced_tweets": [{ "type": "quoted", "id": "1514481459922456578" }]
-    }
-  ],
-  [
-    {
-      "id": "1514539904750927875",
-      "text": "I believe most epidemiologist are now aware of the \"Table 2 Fallacy\". The problem is with authors of regression analysis texts, the bedrocks of statistics education. They rarely stop to ask \"is this a causal effect?\" and they rarely admit they secretly wished it was. https://t.co/R46etZ93RE",
-      "author_id": "3363584909",
-      "conversation_id": "1514539904750927875",
-      "created_at": "2022-04-14T09:43:46Z",
-      "referenced_tweets": [{ "type": "quoted", "id": "1514524810222710785" }]
-    }
-  ],
-  [
-    {
-      "id": "1514536252187430918",
-      "text": "Is the enormous budget of the EDI enterprise just a glaring waste? Or a major obstacle to Equity, Diversity and Inclusion on US campuses? This well-documented article takes a position. \nhttps://t.co/3CwwpkTn5Y\nI concur, based on experience with EDI offices on three campuses.",
-      "author_id": "3363584909",
-      "conversation_id": "1514536252187430918",
-      "created_at": "2022-04-14T09:29:15Z"
-    }
-  ],
-  [
-    {
-      "id": "1514512350941904896",
-      "text": "@soboleffspaces @JanPotters @PaulNaish78 @AnnalsOfScience I agree with @soboleffspaces that we can learn a lot about the dynamics of paradigm shifts by studying the one unfolding before our very eyes, in causality. The anti-shift forces are quite different today, compared with the time of Planck; the echo-chambers are bigger &amp; tighter.",
-      "author_id": "3363584909",
-      "conversation_id": "1514141457992593409",
-      "created_at": "2022-04-14T07:54:17Z",
-      "referenced_tweets": [
-        { "type": "replied_to", "id": "1514437996988153859" }
-      ]
-    },
-    {
-      "id": "1514437996988153859",
-      "text": "@JanPotters @PaulNaish78 @AnnalsOfScience Thanks for your careful account of Kuhn's understanding of Planck's contribution! 👇🏻 \n\nthis is also true of how @yudapearl causality paradigm is perceived by the triallist and economist community https://t.co/4GM6QYz7tI",
-      "attachments": { "media_keys": ["3_1514437990717673473"] },
-      "author_id": "1201157750144655365",
-      "conversation_id": "1514141457992593409",
-      "created_at": "2022-04-14T02:58:50Z",
-      "referenced_tweets": [
-        { "type": "replied_to", "id": "1514141457992593409" }
-      ]
-    },
-    {
-      "id": "1514141457992593409",
-      "text": "Kuhn's 1978 Black-Body Theory is often read as leaving behind Structure: it offers neither crises nor gestalt switches. In a new paper in @AnnalsOfScience, I argue, however, that the book is in fact quite in line with both Structure and later work: https://t.co/vdL0RzYavb",
-      "author_id": "1245229006515048448",
-      "conversation_id": "1514141457992593409",
-      "created_at": "2022-04-13T07:20:29Z"
-    }
-  ],
-  [
-    {
-      "id": "1514507870414409728",
-      "text": "allegations, year after year. Glad a counter-panel was organized and placed BDS on the accused bench (the only kind of panels I agree to join).\nI wish Princeton students would start next academic  year with a fresh referendum: \"Is BDS a racist movement?\"",
-      "author_id": "3363584909",
-      "conversation_id": "1514507869227429890",
-      "created_at": "2022-04-14T07:36:29Z",
-      "referenced_tweets": [
-        { "type": "replied_to", "id": "1514507869227429890" }
-      ]
-    },
-    {
-      "id": "1514507869227429890",
-      "text": "Good news, mixed with somber thoughts. It is a Pyrrhic victory, because, as I've written elsewhere, BDS referendums are  designed to malign, not to be acted upon.The maligning has been accomplished, Israel was put on the accused bench, and the next referendum will repeat the \n1/2 https://t.co/3TsS5MIzcl",
-      "author_id": "3363584909",
-      "conversation_id": "1514507869227429890",
-      "created_at": "2022-04-14T07:36:28Z",
-      "referenced_tweets": [{ "type": "quoted", "id": "1514472462762885122" }]
-    }
-  ],
-  [
-    {
-      "id": "1514507869227429890",
-      "text": "Good news, mixed with somber thoughts. It is a Pyrrhic victory, because, as I've written elsewhere, BDS referendums are  designed to malign, not to be acted upon.The maligning has been accomplished, Israel was put on the accused bench, and the next referendum will repeat the \n1/2 https://t.co/3TsS5MIzcl",
-      "author_id": "3363584909",
-      "conversation_id": "1514507869227429890",
-      "created_at": "2022-04-14T07:36:28Z",
-      "referenced_tweets": [{ "type": "quoted", "id": "1514472462762885122" }]
     }
   ]
 ]
