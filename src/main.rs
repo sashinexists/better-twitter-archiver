@@ -2,7 +2,7 @@ use dotenvy::dotenv;
 
 use futures::executor::block_on;
 use futures::stream::{self, StreamExt};
-use serde_json;
+use ron;
 use std::any::Any;
 use std::fs::{self};
 use twitter_v2::authorization::BearerToken;
@@ -22,49 +22,49 @@ async fn main() {
 }
 
 async fn load_user() -> User {
-    match fs::read_to_string("user.json") {
+    match fs::read_to_string("user.ron") {
         Ok(user) => {
-            println!("Successfully read user.json");
-            serde_json::from_str(&user).expect("Failed to parse file user.json")
+            println!("Successfully read user.ron");
+            ron::from_str(&user).expect("Failed to parse file user.ron")
         }
         Err(_error) => {
             println!("Loading User from API");
             let user = get_user_by_twitter_handle(TWITTER_HANDLE).await;
             fs::write(
-                "user.json",
-                serde_json::to_string(&user).expect("Failed to parse user from API to JSON"),
+                "user.ron",
+                ron::to_string(&user).expect("Failed to parse user from API to JSON"),
             )
-            .expect("Failed to write file user.json");
+            .expect("Failed to write file user.ron");
             user
         }
     }
 }
 
 async fn load_tweets(user: &User) -> Vec<Tweet> {
-    match fs::read_to_string("tweets.json") {
+    match fs::read_to_string("tweets.ron") {
         Ok(tweets) => {
-            println!("Successfully read tweets.json.");
-            serde_json::from_str(&tweets).expect("Failed to parse file tweets.json")
+            println!("Successfully read tweets.ron.");
+            ron::from_str(&tweets).expect("Failed to parse file tweets.ron")
         }
         Err(_error) => {
             println!("Loading tweets from API...");
             let tweets: Vec<Tweet> = get_tweets_from_user(&user).await;
             fs::write(
-                "tweets.json",
-                serde_json::to_string(&tweets).expect("Failed to parse tweets from API into JSON"),
+                "tweets.ron",
+                ron::to_string(&tweets).expect("Failed to parse tweets from API into JSON"),
             )
-            .expect("Failed to write to tweets.json");
-            println!("Saved tweets to new file tweets.json");
+            .expect("Failed to write to tweets.ron");
+            println!("Saved tweets to new file tweets.ron");
             tweets
         }
     }
 }
 
 async fn load_conversations(tweets: Vec<Tweet>) -> Vec<Vec<Tweet>> {
-    match fs::read_to_string("conversations.json") {
+    match fs::read_to_string("conversations.ron") {
         Ok(conversations) => {
-            println!("Successully read conversations.json");
-            serde_json::from_str(&conversations).expect("Failed to parse file conversations.json;")
+            println!("Successully read conversations.ron");
+            ron::from_str(&conversations).expect("Failed to parse file conversations.ron;")
         }
         Err(_error) => {
             println!("Loading conversations from API");
@@ -74,11 +74,11 @@ async fn load_conversations(tweets: Vec<Tweet>) -> Vec<Vec<Tweet>> {
             let conversations = conversations_then.collect::<Vec<_>>().await;
 
             fs::write(
-                "conversations.json",
-                serde_json::to_string(&conversations)
+                "conversations.ron",
+                ron::to_string(&conversations)
                     .expect("Failed to parse conversations from API into a JSON file"),
             )
-            .expect("Failed to write to conversations.json");
+            .expect("Failed to write to conversations.ron");
             conversations
         }
     }
@@ -93,7 +93,6 @@ async fn get_twitter_conversation_from_tweet(tweet: Tweet) -> Vec<Tweet> {
                 .iter()
                 .any(|tweet| tweet.kind == RepliedTo)
             {
-                //you don't want this to be index 0 but rather more precise
                 let replied_to_id = referenced_tweets
                     .iter()
                     .find(|tweet| tweet.kind == RepliedTo)
