@@ -8,77 +8,90 @@ use twitter_v2::{Tweet, TwitterApi, User};
 
 use async_recursion::async_recursion;
 
-const TWITTER_HANDLE: &str = "yudapearl";
-#[tokio::main]
-pub async fn main() {
-    //dotenv().ok();
-    let user = load_user().await;
-    let tweets: Vec<Tweet> = load_tweets(&user).await;
-    let conversations = load_conversations(tweets).await;
+pub async fn load_tweet_from_id(id: u64) -> Tweet {
+    match fs::read_to_string("data/tweets.ron") {
+        Ok(_tweets_string) => {
+            println!("Loading tweet from \"data/tweets.ron\"");
+            let tweets: Vec<Tweet> = read_tweets_from_ron();
+            match tweets.iter().find(|tweet| tweet.id == id) {
+                Some(tweet) => tweet.clone(),
+                None => {
+                    let tweet = get_tweet_by_id(id).await;
+                    let mut output: Vec<Tweet> = Vec::<Tweet>::new();
+                    output.push(tweet.clone());
+                    write_tweets_to_ron(&mut output);
+                    tweet
+                }
+            }
+        }
+        Err(_error) => {
+            println!("Loading tweet from API");
+            let tweet = get_tweet_by_id(id).await;
+            let mut tweets = Vec::<Tweet>::new();
+            tweets.push(tweet.clone());
+            write_tweets_to_ron(&mut tweets);
+            tweet
+        }
+    }
 }
 
-async fn load_user() -> User {
-    match fs::read_to_string("user.ron") {
+pub async fn load_user_from_twitter_handle(twitter_handle: &str) -> User {
+    match fs::read_to_string(format!("data/user-info_{twitter_handle}.ron")) {
         Ok(user) => {
-            println!("Successfully read user.ron");
-            ron::from_str(&user).expect("Failed to parse file user.ron")
+            println!(
+                "Loading user  @{twitter_handle} from \"data/user-info_{twitter_handle}.ron\""
+            );
+            ron::from_str(&user).expect(&format!(
+                "Failed to parse file \"data/user_{twitter_handle}.ron\""
+            ))
         }
         Err(_error) => {
             println!("Loading User from API");
-            let user = get_user_by_twitter_handle(TWITTER_HANDLE).await;
+            let user = get_user_by_twitter_handle(twitter_handle).await;
             fs::write(
-                "user.ron",
-                ron::to_string(&user).expect("Failed to parse user from API to JSON"),
+                format!("data/user-info_{twitter_handle}.ron"),
+                ron::ser::to_string_pretty(&user, ron::ser::PrettyConfig::new())
+                    .expect("Failed to parse user from API to JSON"),
             )
-            .expect("Failed to write file user.ron");
+            .expect(&format!(
+                "Failed to write file \"data/user-info_{twitter_handle}.ron\""
+            ));
             user
         }
     }
 }
 
-async fn load_tweets(user: &User) -> Vec<Tweet> {
-    match fs::read_to_string("tweets.ron") {
-        Ok(tweets) => {
-            println!("Successfully read tweets.ron.");
-            ron::from_str(&tweets).expect("Failed to parse file tweets.ron")
-        }
-        Err(_error) => {
-            println!("Loading tweets from API...");
-            let tweets: Vec<Tweet> = get_tweets_from_user(&user).await;
-            fs::write(
-                "tweets.ron",
-                ron::to_string(&tweets).expect("Failed to parse tweets from API into JSON"),
-            )
-            .expect("Failed to write to tweets.ron");
-            println!("Saved tweets to new file tweets.ron");
-            tweets
-        }
-    }
-}
-
-pub async fn load_conversations(tweets: Vec<Tweet>) -> Vec<Vec<Tweet>> {
-    match fs::read_to_string("conversations.ron") {
-        Ok(conversations) => {
-            println!("Successully read conversations.ron");
-            ron::from_str(&conversations).expect("Failed to parse file conversations.ron;")
+pub async fn load_conversations_from_twitter_handle(twitter_handle: &str) -> Vec<Vec<Tweet>> {
+    match fs::read_to_string(format!("data/user-conversations_{twitter_handle}.ron")) {
+        Ok(conversations_string) => {
+            println!("Loading conversations from \"data/user-conversations_{twitter_handle}.ron\"");
+            ron::from_str(&conversations_string).expect(&format!(
+                "Failed to parse conversations from \"data/user-conversations_{twitter_handle}"
+            ))
         }
         Err(_error) => {
             println!("Loading conversations from API");
+            let tweets = load_tweets_from_twitter_handle(twitter_handle).await;
             let conversations_stream = stream::iter(tweets);
             let conversations_then =
                 conversations_stream.then(|tweet| get_twitter_conversation_from_tweet(tweet));
             let conversations = conversations_then.collect::<Vec<_>>().await;
-
             fs::write(
-                "conversations.ron",
-                ron::to_string(&conversations)
-                    .expect("Failed to parse conversations from API into a JSON file"),
+                format!("data/user-conversations_{twitter_handle}.ron"),
+                ron::ser::to_string_pretty(&conversations, ron::ser::PrettyConfig::new())
+                    .expect("Failed to parse conversations from API into \"data/user-conversations_{twitter_handle}.ron\""),
             )
-            .expect("Failed to write to conversations.ron");
+            .expect("Failed to write to \"data/user-conversations_{twitter_handle}.ron\"");
             conversations
         }
     }
 }
+//next up load conversations from data/conversations.ron
+//if the last tweet in any conversation's id matched the input you can just  return that conversation
+/*
+pub async fn load_conversation_from_tweet_id(tweet_id: i64) -> Vec<Tweet> {
+    match fs::read
+}*/
 
 #[async_recursion]
 pub async fn get_twitter_conversation_from_tweet(tweet: Tweet) -> Vec<Tweet> {
@@ -95,7 +108,7 @@ pub async fn get_twitter_conversation_from_tweet(tweet: Tweet) -> Vec<Tweet> {
                     .expect("Failed to find replied to tweet")
                     .id
                     .as_u64();
-                let replied_to: Tweet = get_tweet_by_id(replied_to_id).await;
+                let replied_to: Tweet = load_tweet_from_id(replied_to_id).await;
                 let mut conversation: Vec<Tweet> =
                     get_twitter_conversation_from_tweet(replied_to).await;
                 output.append(&mut conversation);
@@ -109,27 +122,7 @@ pub async fn get_twitter_conversation_from_tweet(tweet: Tweet) -> Vec<Tweet> {
     }
 }
 
-#[allow(dead_code)]
-async fn get_tweets_from_query(query: &str) -> Vec<Tweet> {
-    load_api()
-        .await
-        .get_tweets_search_recent(query)
-        .max_results(10)
-        .tweet_fields([
-            TweetField::Attachments,
-            TweetField::ReferencedTweets,
-            TweetField::ConversationId,
-            TweetField::AuthorId,
-            TweetField::CreatedAt,
-        ])
-        .send()
-        .await
-        .expect("Failed to get conversation")
-        .into_data()
-        .expect("Failed to open conversation Option<Vec<Tweet>>")
-}
-
-pub async fn get_tweets_from_user(user: &User) -> Vec<Tweet> {
+async fn get_tweets_from_user(user: &User) -> Vec<Tweet> {
     load_api()
         .await
         .get_user_tweets(user.id)
@@ -148,7 +141,23 @@ pub async fn get_tweets_from_user(user: &User) -> Vec<Tweet> {
         .expect("Failure to open option<Vec<Tweet>>")
 }
 
-pub async fn get_tweet_by_id(id: u64) -> Tweet {
+async fn load_tweets_from_twitter_handle(twitter_handle: &str) -> Vec<Tweet> {
+    match fs::read_to_string(format!("data/user-tweets_{twitter_handle}.ron")) {
+        Ok(tweets) => ron::from_str(&tweets)
+            .expect("Failed to load tweets from \"data/user-tweets_{twitter_handle}\""),
+        Err(_error) => {
+            let tweets =
+                get_tweets_from_user(&load_user_from_twitter_handle(twitter_handle).await).await;
+            fs::write(
+                format!("data/user-tweets_{twitter_handle}.ron"),
+                ron::ser::to_string_pretty(&tweets, ron::ser::PrettyConfig::new()).expect("Failed to parse fetched user tweets into \"data/user-tweets_{twitter_handle}.ron\"")
+            ).expect("Failed to write @{twitter_handles}'s tweets into \"data/user-tweets_{}.ron\"");
+            tweets
+        }
+    }
+}
+
+async fn get_tweet_by_id(id: u64) -> Tweet {
     load_api()
         .await
         .get_tweet(id)
@@ -166,7 +175,7 @@ pub async fn get_tweet_by_id(id: u64) -> Tweet {
         .expect("Failure to open option<Tweet>")
 }
 
-pub async fn get_user_by_twitter_handle(twitter_handle: &str) -> User {
+async fn get_user_by_twitter_handle(twitter_handle: &str) -> User {
     load_api()
         .await
         .get_user_by_username(twitter_handle)
@@ -181,4 +190,35 @@ pub async fn get_user_by_twitter_handle(twitter_handle: &str) -> User {
 async fn load_api() -> TwitterApi<BearerToken> {
     let auth = BearerToken::new(std::env::var("TWITTER_DEV_BEARER_TOKEN").unwrap());
     TwitterApi::new(auth)
+}
+
+fn write_tweets_to_ron(tweets: &mut Vec<Tweet>) {
+    match fs::read_to_string("data/tweets.ron") {
+        Ok(tweets_from_ron_string) => {
+            let mut tweets_from_ron: Vec<Tweet> = ron::from_str(&tweets_from_ron_string)
+                .expect("Failed to read tweets from \"data/tweets.ron\"");
+            tweets_from_ron.append(tweets);
+            fs::write(
+                "data/tweets.ron",
+                ron::ser::to_string_pretty(&tweets_from_ron, ron::ser::PrettyConfig::new())
+                    .expect("Failed to parse tweets_from_ron back into a string"),
+            )
+            .expect("Failed to write to \"data/tweets.ron\"");
+        }
+        Err(_error) => fs::write(
+            "data/tweets.ron",
+            ron::ser::to_string_pretty(&tweets, ron::ser::PrettyConfig::new())
+                .expect("Failed to parse tweets into a ron string"),
+        )
+        .expect("Failed to create a new \"data/tweets.ron\""),
+    }
+}
+
+fn read_tweets_from_ron() -> Vec<Tweet> {
+    match fs::read_to_string("data/tweets.ron") {
+        Ok(tweets) => {
+            ron::from_str(&tweets).expect("Failed to parse tweets from \"data/tweets.ron\"")
+        }
+        Err(_error) => Vec::<Tweet>::new(),
+    }
 }

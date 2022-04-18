@@ -1,0 +1,42 @@
+[
+    (
+        id: "1514924625628606469",
+        text: "Decades of lop-sided press coverage of the conflict gave Palestinians the idea that Western readers are stupid enough to believe that Israel is interested in escalating tensions on the holidays, even \"to perpetrate a massacre\"-- no less. Western readers can swallow elephants. https://t.co/JbThFaaWjJ",
+        author_id: Some("3363584909"),
+        conversation_id: Some("1514924625628606469"),
+        created_at: Some("2022-04-15T11:12:31Z"),
+        referenced_tweets: Some([
+            (
+                type: quoted,
+                id: "1514863994040897542",
+            ),
+        ]),
+    ),
+    (
+        id: "1515945843819364357",
+        text: "University of British Columbia Rejects BDS Movement, Urges ‘Respectful’ Discourse on Mideast https://t.co/SPGrFeNVtR",
+        author_id: Some("3363584909"),
+        conversation_id: Some("1515945843819364357"),
+        created_at: Some("2022-04-18T06:50:28Z"),
+    ),
+    (
+        id: "1515945844784041985",
+        text: "Hats off to all students and faculty of the University of British Columbia for rejecting\nBDS demands last week. Still, the fact that a student union could issue such demands for the purpose\nof slandering Israel as a \"system of apartheid\" calls into question \n1/2",
+        author_id: Some("3363584909"),
+        conversation_id: Some("1515945843819364357"),
+        created_at: Some("2022-04-18T06:50:28Z"),
+        referenced_tweets: Some([
+            (
+                type: replied_to,
+                id: "1515945843819364357",
+            ),
+        ]),
+    ),
+    (
+        id: "1514929278923640836",
+        text: "Dear readers,\nI\'ll be taken a couple of days off Twitter, to celebrate Passover with my family. In addition to symbolizing freedom, renewal and hope, Passover reminds us that humans are historically driven animals. As the First Commandment says:\n\"I am your Lord your God, who\n1/2",
+        author_id: Some("3363584909"),
+        conversation_id: Some("1514929278923640836"),
+        created_at: Some("2022-04-15T11:31:00Z"),
+    ),
+]
