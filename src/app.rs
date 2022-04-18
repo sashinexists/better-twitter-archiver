@@ -141,7 +141,7 @@ async fn get_tweets_from_user(user: &User) -> Vec<Tweet> {
         .expect("Failure to open option<Vec<Tweet>>")
 }
 
-async fn load_tweets_from_twitter_handle(twitter_handle: &str) -> Vec<Tweet> {
+pub async fn load_tweets_from_twitter_handle(twitter_handle: &str) -> Vec<Tweet> {
     match fs::read_to_string(format!("data/user-tweets_{twitter_handle}.ron")) {
         Ok(tweets) => ron::from_str(&tweets)
             .expect("Failed to load tweets from \"data/user-tweets_{twitter_handle}\""),
