@@ -56,7 +56,7 @@ async fn load_tweets(user: &User) -> Vec<Tweet> {
     }
 }
 
-async fn load_conversations(tweets: Vec<Tweet>) -> Vec<Vec<Tweet>> {
+pub async fn load_conversations(tweets: Vec<Tweet>) -> Vec<Vec<Tweet>> {
     match fs::read_to_string("conversations.ron") {
         Ok(conversations) => {
             println!("Successully read conversations.ron");
@@ -81,7 +81,7 @@ async fn load_conversations(tweets: Vec<Tweet>) -> Vec<Vec<Tweet>> {
 }
 
 #[async_recursion]
-async fn get_twitter_conversation_from_tweet(tweet: Tweet) -> Vec<Tweet> {
+pub async fn get_twitter_conversation_from_tweet(tweet: Tweet) -> Vec<Tweet> {
     let mut output = vec![tweet];
     match &output[0].referenced_tweets {
         Some(referenced_tweets) => {
@@ -129,7 +129,7 @@ async fn get_tweets_from_query(query: &str) -> Vec<Tweet> {
         .expect("Failed to open conversation Option<Vec<Tweet>>")
 }
 
-async fn get_tweets_from_user(user: &User) -> Vec<Tweet> {
+pub async fn get_tweets_from_user(user: &User) -> Vec<Tweet> {
     load_api()
         .await
         .get_user_tweets(user.id)
@@ -166,7 +166,7 @@ pub async fn get_tweet_by_id(id: u64) -> Tweet {
         .expect("Failure to open option<Tweet>")
 }
 
-async fn get_user_by_twitter_handle(twitter_handle: &str) -> User {
+pub async fn get_user_by_twitter_handle(twitter_handle: &str) -> User {
     load_api()
         .await
         .get_user_by_username(twitter_handle)
