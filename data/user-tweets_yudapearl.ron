@@ -1,120 +1,106 @@
 [
     (
-        id: "1515945845555822596",
-        text: "whether UBC is doing all it can to curb Zionophobic racism on campus.\n\n2/2",
+        id: "1516316850870575112",
+        text: "I enjoy reading S. Russell\'s thoughts on the difficulty of teaching machines to respect human values when we can\'t specify them ourselves: https://t.co/Krdp9y6Ekn\nYet we do succeed in doing so (barring exceptions) when it comes to children\'s education. Is the analogy valid?",
         author_id: Some("3363584909"),
-        conversation_id: Some("1515945843819364357"),
-        created_at: Some("2022-04-18T06:50:29Z"),
+        conversation_id: Some("1516316850870575112"),
+        created_at: Some("2022-04-19T07:24:43Z"),
+    ),
+    (
+        id: "1516267287459688448",
+        text: "Resolutions to address campus antisemitism are welcome but, as the USC experience has taught us https://t.co/vXxPyUFnQW such resolutions turn covers for inaction unless accompanied with explicit and specific statements that Israeli and Zionist students are welcome on campus.",
+        author_id: Some("3363584909"),
+        conversation_id: Some("1516267286394404866"),
+        created_at: Some("2022-04-19T04:07:46Z"),
         referenced_tweets: Some([
             (
                 type: replied_to,
-                id: "1515945844784041985",
+                id: "1516267286394404866",
             ),
         ]),
     ),
     (
-        id: "1515945844784041985",
-        text: "Hats off to all students and faculty of the University of British Columbia for rejecting\nBDS demands last week. Still, the fact that a student union could issue such demands for the purpose\nof slandering Israel as a \"system of apartheid\" calls into question \n1/2",
+        id: "1516267286394404866",
+        text: "ASM unanimously passes resolution addressing campus antisemitism https://t.co/d03b1n8San",
         author_id: Some("3363584909"),
-        conversation_id: Some("1515945843819364357"),
-        created_at: Some("2022-04-18T06:50:28Z"),
+        conversation_id: Some("1516267286394404866"),
+        created_at: Some("2022-04-19T04:07:46Z"),
+    ),
+    (
+        id: "1516255426739781634",
+        text: "A must read, to understand why Putin still appeals to most Russians, and how the myth of \"Fortress Russia\" (the perception of Russia as an island of goodness and beneficence in a hostile world) will shape Putin\'s next moves.",
+        author_id: Some("3363584909"),
+        conversation_id: Some("1516255425523453955"),
+        created_at: Some("2022-04-19T03:20:39Z"),
         referenced_tweets: Some([
             (
                 type: replied_to,
-                id: "1515945843819364357",
+                id: "1516255425523453955",
             ),
         ]),
     ),
     (
-        id: "1515945843819364357",
-        text: "University of British Columbia Rejects BDS Movement, Urges ‘Respectful’ Discourse on Mideast https://t.co/SPGrFeNVtR",
+        id: "1516255425523453955",
+        text: "How the image of a besieged and victimized Russia came to be so ingrained in the country\'s psyche https://t.co/45ZUPWLnVt via @ConversationUS",
         author_id: Some("3363584909"),
-        conversation_id: Some("1515945843819364357"),
-        created_at: Some("2022-04-18T06:50:28Z"),
+        conversation_id: Some("1516255425523453955"),
+        created_at: Some("2022-04-19T03:20:38Z"),
     ),
     (
-        id: "1515935973997256704",
-        text: "I feel like breaking fast with these families, and thanking Israeli police for maximizing the number of worshipers allowed on the Temple Mount, while minimizing the number of arrests needed to enable the former. A monumental achievement. https://t.co/YqkoECYISm",
+        id: "1516249966146035715",
+        text: "@eliasbareinboim The feeling is mutual.",
         author_id: Some("3363584909"),
-        conversation_id: Some("1515935973997256704"),
-        created_at: Some("2022-04-18T06:11:15Z"),
-        referenced_tweets: Some([
-            (
-                type: quoted,
-                id: "1515806340937039876",
-            ),
-        ]),
-    ),
-    (
-        id: "1515927747628920833",
-        text: "RT @sapinker: Wokeism is totalitarian, allowing no private spaces. Snitches tattle to the press about remarks at dinner parties; vigilantes…",
-        author_id: Some("3363584909"),
-        conversation_id: Some("1515927747628920833"),
-        created_at: Some("2022-04-18T05:38:34Z"),
-        referenced_tweets: Some([
-            (
-                type: retweeted,
-                id: "1515911315813851142",
-            ),
-        ]),
-    ),
-    (
-        id: "1515806099491852295",
-        text: "@nytimes style headline: Three Muslims on their way to Ramadan prayer at Al Aqsa Mosque, the holiest Muslim shrine in all of Jerusalem, intercepted by three Jews going elsewhere. @nytimes https://t.co/rShhclZToa",
-        author_id: Some("3363584909"),
-        conversation_id: Some("1515806099491852295"),
-        created_at: Some("2022-04-17T21:35:11Z"),
-        referenced_tweets: Some([
-            (
-                type: quoted,
-                id: "1515638367035215872",
-            ),
-        ]),
-    ),
-    (
-        id: "1515795709718499329",
-        text: "RT @EinatWilf: Context: \"Already in 1920\'s the Mufti recognized the power of the lie \'Jews are threatening Al-Aqsa\' - part rallying cry, pa…",
-        author_id: Some("3363584909"),
-        conversation_id: Some("1515795709718499329"),
-        created_at: Some("2022-04-17T20:53:53Z"),
-        referenced_tweets: Some([
-            (
-                type: retweeted,
-                id: "1515775639135137798",
-            ),
-        ]),
-    ),
-    (
-        id: "1515770474034171904",
-        text: "This holiday statement by Tom Nides @USAmbIsrael must have been generated by an\nold software package, before the advent of AI. https://t.co/AIkjHXZcov",
-        author_id: Some("3363584909"),
-        conversation_id: Some("1515770474034171904"),
-        created_at: Some("2022-04-17T19:13:37Z"),
-        referenced_tweets: Some([
-            (
-                type: quoted,
-                id: "1515570491561582593",
-            ),
-        ]),
-    ),
-    (
-        id: "1514929280030961665",
-        text: "delivered you from Egypt, from the house of bondage.\" Modern translation: \"If you forget  history, you\'ll forget me -- your sense of right and wrong.\"\nHappy Passover.\nNext year in Jerusalem!",
-        author_id: Some("3363584909"),
-        conversation_id: Some("1514929278923640836"),
-        created_at: Some("2022-04-15T11:31:01Z"),
+        conversation_id: Some("1516241261468045313"),
+        created_at: Some("2022-04-19T02:58:57Z"),
         referenced_tweets: Some([
             (
                 type: replied_to,
-                id: "1514929278923640836",
+                id: "1516241261468045313",
             ),
         ]),
     ),
     (
-        id: "1514929278923640836",
-        text: "Dear readers,\nI\'ll be taken a couple of days off Twitter, to celebrate Passover with my family. In addition to symbolizing freedom, renewal and hope, Passover reminds us that humans are historically driven animals. As the First Commandment says:\n\"I am your Lord your God, who\n1/2",
+        id: "1516235854133399553",
+        text: "It is out now. A video recording of the 20th Daniel Pearl Memorial Lecture, by Benard-Henry Levy has been released, and can be watched here: https://t.co/XgE1iBIF6o\nGeneral Introduction: 0-6:15\nMy introduction: 6:15 - 12:00\nBHL Lecture: 12:00- 38:00\nInterview+QA: 38:00 - end",
         author_id: Some("3363584909"),
-        conversation_id: Some("1514929278923640836"),
-        created_at: Some("2022-04-15T11:31:00Z"),
+        conversation_id: Some("1516235854133399553"),
+        created_at: Some("2022-04-19T02:02:52Z"),
+    ),
+    (
+        id: "1516172175497064452",
+        text: "Insightful summary of the Princeton referendum. Yet, as I\'ve tweeted earlier https://t.co/Tcnzkytkk6\nthe damage is done; referendums are designed to slander, not to be acted on. \"Is BDS a racist movement?\" should be on the ballot next.",
+        author_id: Some("3363584909"),
+        conversation_id: Some("1516172174595297280"),
+        created_at: Some("2022-04-18T21:49:50Z"),
+        referenced_tweets: Some([
+            (
+                type: quoted,
+                id: "1514507870414409728",
+            ),
+            (
+                type: replied_to,
+                id: "1516172174595297280",
+            ),
+        ]),
+    ),
+    (
+        id: "1516172174595297280",
+        text: "Inside the Princeton BDS Referendum Controversy https://t.co/NRM760oiGo via @jewishjournal",
+        author_id: Some("3363584909"),
+        conversation_id: Some("1516172174595297280"),
+        created_at: Some("2022-04-18T21:49:50Z"),
+    ),
+    (
+        id: "1516164059007127552",
+        text: "@deboerk07 @lucasbergkamp It is answered partially here:       https://t.co/Zy7uTAKR2N",
+        author_id: Some("3363584909"),
+        conversation_id: Some("1516029225509208069"),
+        created_at: Some("2022-04-18T21:17:35Z"),
+        referenced_tweets: Some([
+            (
+                type: replied_to,
+                id: "1516139773404061709",
+            ),
+        ]),
     ),
 ]

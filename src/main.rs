@@ -42,20 +42,17 @@ async fn tweet_by_id(id: u64) -> String {
 #[get("/conversation/<id>")]
 async fn conversation_by_id(id: u64) -> String {
     ron::ser::to_string_pretty(
-        &app::get_twitter_conversation_from_tweet(app::load_tweet_from_id(id).await).await,
+        &app::load_conversation_from_tweet_id(id).await,
         ron::ser::PrettyConfig::new(),
     )
     .expect("Failed to serve twitter conversation")
 }
 
-//maybe this could be a tuple for a tweed id and a conversation
+//here a conversation id is the id of the *last* tweet in a conversation
 #[get("/conversation/<id>/<tweet_id>")]
 async fn tweet_in_conversation_by_id(id: u64, tweet_id: u64) -> String {
     ron::ser::to_string_pretty(
-        &(
-            tweet_id,
-            &app::get_twitter_conversation_from_tweet(app::load_tweet_from_id(id).await).await,
-        ),
+        &(tweet_id, &app::load_conversation_from_tweet_id(id).await),
         ron::ser::PrettyConfig::new(),
     )
     .expect("Failed to serve twitter conversation")
