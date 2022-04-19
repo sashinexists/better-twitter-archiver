@@ -45,8 +45,8 @@ pub async fn get_tweets_from_user(user: &User) -> Vec<Tweet> {
         .tweet_fields([
             TweetField::Attachments,
             TweetField::ReferencedTweets,
-            TweetField::ConversationId,
             TweetField::AuthorId,
+            TweetField::ConversationId,
             TweetField::CreatedAt,
         ])
         .send()
@@ -71,7 +71,7 @@ pub async fn get_tweet_by_id(id: u64) -> Tweet {
         .await
         .expect("this tweet should exist")
         .into_data()
-        .expect("Failure to open option<Tweet>")
+        .expect("Failure to open Option<Tweet>")
 }
 
 pub async fn get_user_by_twitter_handle(twitter_handle: &str) -> User {

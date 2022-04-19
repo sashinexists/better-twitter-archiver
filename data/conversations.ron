@@ -1,37 +1,6 @@
 [
     [
         (
-            id: "1516316850870575112",
-            text: "I enjoy reading S. Russell\'s thoughts on the difficulty of teaching machines to respect human values when we can\'t specify them ourselves: https://t.co/Krdp9y6Ekn\nYet we do succeed in doing so (barring exceptions) when it comes to children\'s education. Is the analogy valid?",
-            author_id: Some("3363584909"),
-            conversation_id: Some("1516316850870575112"),
-            created_at: Some("2022-04-19T07:24:43Z"),
-        ),
-    ],
-    [
-        (
-            id: "1516267287459688448",
-            text: "Resolutions to address campus antisemitism are welcome but, as the USC experience has taught us https://t.co/vXxPyUFnQW such resolutions turn covers for inaction unless accompanied with explicit and specific statements that Israeli and Zionist students are welcome on campus.",
-            author_id: Some("3363584909"),
-            conversation_id: Some("1516267286394404866"),
-            created_at: Some("2022-04-19T04:07:46Z"),
-            referenced_tweets: Some([
-                (
-                    type: replied_to,
-                    id: "1516267286394404866",
-                ),
-            ]),
-        ),
-        (
-            id: "1516267286394404866",
-            text: "ASM unanimously passes resolution addressing campus antisemitism https://t.co/d03b1n8San",
-            author_id: Some("3363584909"),
-            conversation_id: Some("1516267286394404866"),
-            created_at: Some("2022-04-19T04:07:46Z"),
-        ),
-    ],
-    [
-        (
             id: "1516255426739781634",
             text: "A must read, to understand why Putin still appeals to most Russians, and how the myth of \"Fortress Russia\" (the perception of Russia as an island of goodness and beneficence in a hostile world) will shape Putin\'s next moves.",
             author_id: Some("3363584909"),
@@ -54,100 +23,126 @@
     ],
     [
         (
-            id: "1516249966146035715",
-            text: "@eliasbareinboim The feeling is mutual.",
+            id: "1516415016559390724",
+            text: "@robertskmiles @DJMinded @TomChivers Toddlers learn quickly that differences in appearance is no hindrance to empathy. Machines should do it too, especially after realizing how similar their cognitive structure is to that of their human mentor.",
             author_id: Some("3363584909"),
-            conversation_id: Some("1516241261468045313"),
-            created_at: Some("2022-04-19T02:58:57Z"),
+            conversation_id: Some("1516316850870575112"),
+            created_at: Some("2022-04-19T13:54:48Z"),
             referenced_tweets: Some([
                 (
                     type: replied_to,
-                    id: "1516241261468045313",
+                    id: "1516375954515537927",
                 ),
             ]),
         ),
         (
-            id: "1516241261468045313",
-            text: "Hi Judea, thank you for your kindness and for sharing your wisdom &amp; friendship during this long journey. \nI feel humbled and blessed to have the opportunity to study &amp; research the foundations of causal inference and AI with you. https://t.co/Upw3khxKFh",
-            author_id: Some("107367723"),
-            conversation_id: Some("1516241261468045313"),
-            created_at: Some("2022-04-19T02:24:21Z"),
+            id: "1516375954515537927",
+            text: "@DJMinded @TomChivers @yudapearl In the grand scheme of things.\nThe difference between two humans is effectively zero compared to the difference between a human and any AI system",
+            author_id: Some("133152680"),
+            conversation_id: Some("1516316850870575112"),
+            created_at: Some("2022-04-19T11:19:35Z"),
+            referenced_tweets: Some([
+                (
+                    type: replied_to,
+                    id: "1516367791158222849",
+                ),
+            ]),
+        ),
+        (
+            id: "1516367791158222849",
+            text: "@robertskmiles @TomChivers @yudapearl “Humans have near identical cognitive architecture” Are you joking?",
+            author_id: Some("51245728"),
+            conversation_id: Some("1516316850870575112"),
+            created_at: Some("2022-04-19T10:47:08Z"),
+            referenced_tweets: Some([
+                (
+                    type: replied_to,
+                    id: "1516357434004148228",
+                ),
+            ]),
+        ),
+        (
+            id: "1516357434004148228",
+            text: "@TomChivers @yudapearl Yeah. Also huamns have near identical cognitive architecture and work the same way, so you don\'t have problems like \"The AI has learned/invented its own set of concepts and abstractions, which are incompatible with the concepts and abstractions over which our values are defined\"",
+            author_id: Some("133152680"),
+            conversation_id: Some("1516316850870575112"),
+            created_at: Some("2022-04-19T10:05:59Z"),
+            referenced_tweets: Some([
+                (
+                    type: replied_to,
+                    id: "1516348393370619909",
+                ),
+            ]),
+        ),
+        (
+            id: "1516348393370619909",
+            text: "@yudapearl I think the tweet-length response would be something like “human children are partially preprogrammed by evolution to both have some human values and to learn what human values are through imitation, which AIs would not be unless we deliberately make it so”",
+            author_id: Some("19533817"),
+            conversation_id: Some("1516316850870575112"),
+            created_at: Some("2022-04-19T09:30:04Z"),
+            referenced_tweets: Some([
+                (
+                    type: replied_to,
+                    id: "1516316850870575112",
+                ),
+            ]),
+        ),
+        (
+            id: "1516316850870575112",
+            text: "I enjoy reading S. Russell\'s thoughts on the difficulty of teaching machines to respect human values when we can\'t specify them ourselves: https://t.co/Krdp9y6Ekn\nYet we do succeed in doing so (barring exceptions) when it comes to children\'s education. Is the analogy valid?",
+            author_id: Some("3363584909"),
+            conversation_id: Some("1516316850870575112"),
+            created_at: Some("2022-04-19T07:24:43Z"),
+        ),
+    ],
+    [
+        (
+            id: "1516406314582249479",
+            text: "@daniel_corcos @stephensenn I do not use \"risk factor\" terminology. I use back-door, and no confusion arises.",
+            author_id: Some("3363584909"),
+            conversation_id: Some("1516400962373566469"),
+            created_at: Some("2022-04-19T13:20:13Z"),
+            referenced_tweets: Some([
+                (
+                    type: replied_to,
+                    id: "1516400962373566469",
+                ),
+            ]),
+        ),
+        (
+            id: "1516400962373566469",
+            text: "If I say \"Old age is a risk factor for cancer\", is it the same as \"Cancer is a risk factor for old age\"?\n@stephensenn @yudapearl https://t.co/E7sNPRnhgT",
+            author_id: Some("981820619187802113"),
+            conversation_id: Some("1516400962373566469"),
+            created_at: Some("2022-04-19T12:58:57Z"),
             referenced_tweets: Some([
                 (
                     type: quoted,
-                    id: "1515976054753488896",
+                    id: "1515705800248987650",
                 ),
             ]),
         ),
     ],
     [
         (
-            id: "1516235854133399553",
-            text: "It is out now. A video recording of the 20th Daniel Pearl Memorial Lecture, by Benard-Henry Levy has been released, and can be watched here: https://t.co/XgE1iBIF6o\nGeneral Introduction: 0-6:15\nMy introduction: 6:15 - 12:00\nBHL Lecture: 12:00- 38:00\nInterview+QA: 38:00 - end",
+            id: "1516267287459688448",
+            text: "Resolutions to address campus antisemitism are welcome but, as the USC experience has taught us https://t.co/vXxPyUFnQW such resolutions turn covers for inaction unless accompanied with explicit and specific statements that Israeli and Zionist students are welcome on campus.",
             author_id: Some("3363584909"),
-            conversation_id: Some("1516235854133399553"),
-            created_at: Some("2022-04-19T02:02:52Z"),
-        ),
-    ],
-    [
-        (
-            id: "1516172175497064452",
-            text: "Insightful summary of the Princeton referendum. Yet, as I\'ve tweeted earlier https://t.co/Tcnzkytkk6\nthe damage is done; referendums are designed to slander, not to be acted on. \"Is BDS a racist movement?\" should be on the ballot next.",
-            author_id: Some("3363584909"),
-            conversation_id: Some("1516172174595297280"),
-            created_at: Some("2022-04-18T21:49:50Z"),
+            conversation_id: Some("1516267286394404866"),
+            created_at: Some("2022-04-19T04:07:46Z"),
             referenced_tweets: Some([
                 (
-                    type: quoted,
-                    id: "1514507870414409728",
-                ),
-                (
                     type: replied_to,
-                    id: "1516172174595297280",
+                    id: "1516267286394404866",
                 ),
             ]),
         ),
         (
-            id: "1516172174595297280",
-            text: "Inside the Princeton BDS Referendum Controversy https://t.co/NRM760oiGo via @jewishjournal",
+            id: "1516267286394404866",
+            text: "ASM unanimously passes resolution addressing campus antisemitism https://t.co/d03b1n8San",
             author_id: Some("3363584909"),
-            conversation_id: Some("1516172174595297280"),
-            created_at: Some("2022-04-18T21:49:50Z"),
-        ),
-    ],
-    [
-        (
-            id: "1516164059007127552",
-            text: "@deboerk07 @lucasbergkamp It is answered partially here:       https://t.co/Zy7uTAKR2N",
-            author_id: Some("3363584909"),
-            conversation_id: Some("1516029225509208069"),
-            created_at: Some("2022-04-18T21:17:35Z"),
-            referenced_tweets: Some([
-                (
-                    type: replied_to,
-                    id: "1516139773404061709",
-                ),
-            ]),
-        ),
-        (
-            id: "1516139773404061709",
-            text: "@lucasbergkamp Yes, purely statistics, not causal. Why not use DAG\'s and try to answer a counterfactual question like ,what happens if there is no anthr. CO2 emission. @yudapearl ?",
-            author_id: Some("2973443261"),
-            conversation_id: Some("1516029225509208069"),
-            created_at: Some("2022-04-18T19:41:05Z"),
-            referenced_tweets: Some([
-                (
-                    type: replied_to,
-                    id: "1516029225509208069",
-                ),
-            ]),
-        ),
-        (
-            id: "1516029225509208069",
-            text: "“Global temperature at least partially explains observed changes in CO2, but purely statistical analysis cannot tie down the magnitude. Model using anthropogenic and natural forcings suggests ~15% of the rise in CO2 being due to natural factors” https://t.co/kvA8ESTqs5",
-            author_id: Some("421299640"),
-            conversation_id: Some("1516029225509208069"),
-            created_at: Some("2022-04-18T12:21:48Z"),
+            conversation_id: Some("1516267286394404866"),
+            created_at: Some("2022-04-19T04:07:46Z"),
         ),
     ],
 ]
