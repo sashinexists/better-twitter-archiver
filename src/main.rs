@@ -66,6 +66,15 @@ async fn user_by_twitter_handle(twitter_handle: &str) -> String {
     )
     .expect("Failed to serve user from id")
 }
+
+#[get("/userid/<id>")]
+async fn user_by_id(id: u64) -> String {
+    ron::ser::to_string_pretty(
+        &app::load_user_from_id(id).await,
+        ron::ser::PrettyConfig::new(),
+    )
+    .expect("Failed to serve user from id")
+}
 //exact same as get user_by_twitter_handle
 #[get("/user/<twitter_handle>/info")]
 async fn user_info_by_twitter_handle(twitter_handle: &str) -> String {
@@ -107,12 +116,14 @@ fn search(query: &str) -> String {
 #[launch]
 pub fn rocket() -> _ {
     dotenv().ok();
-    rocket::build()
+    let figment = rocket::Config::figment().merge(("port", 4000));
+    rocket::custom(figment)
         .mount("/", routes![search])
         .mount("/", routes![conversations_by_twitter_handle])
         .mount("/", routes![tweets_by_user])
         .mount("/", routes![user_info_by_twitter_handle])
         .mount("/", routes![user_by_twitter_handle])
+        .mount("/", routes![user_by_id])
         .mount("/", routes![tweet_in_conversation_by_id])
         .mount("/", routes![conversation_by_id])
         .mount("/", routes![tweet_by_id])

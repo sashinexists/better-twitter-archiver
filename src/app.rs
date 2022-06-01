@@ -1,7 +1,7 @@
 use futures::stream::{self, StreamExt};
 use ron;
 
-use twitter_v2::{Tweet, User};
+use twitter_v2::{id::NumericId, Tweet, User};
 
 pub mod api;
 pub mod io;
@@ -58,6 +58,33 @@ pub async fn load_user_from_twitter_handle(twitter_handle: &str) -> User {
     }
 }
 
+pub async fn load_user_from_id(id: u64) -> User {
+    match io::read::users_string_from_ron() {
+        Ok(users_ron_str) => {
+            println!("Loading user of id {id} from \"data/users.ron\"");
+            let users: Vec<User> = ron::from_str(&users_ron_str)
+                .expect(&format!("Failed to parse file \"data/users.ron\""));
+            if users.iter().any(|user| user.id.as_u64() == id) {
+                users
+                    .into_iter()
+                    .find(|user| user.id.as_u64() == id)
+                    .expect("Failed to get user from id")
+            } else {
+                println!("Loading User of id {id} from Twitter API");
+                let user = api::get_user_by_id(id).await;
+                io::write::user_to_users_ron(&user);
+                user
+            }
+        }
+        Err(_error) => {
+            println!("Loading User of id {id} from Twitter API");
+            let user = api::get_user_by_id(id).await;
+            io::write::user_to_users_ron(&user);
+            user
+        }
+    }
+}
+
 pub async fn load_conversations_from_twitter_handle(twitter_handle: &str) -> Vec<Vec<Tweet>> {
     match io::read::user_conversations_string_from_ron(twitter_handle) {
         Ok(conversations_string) => {
@@ -78,8 +105,6 @@ pub async fn load_conversations_from_twitter_handle(twitter_handle: &str) -> Vec
         }
     }
 }
-//next up load conversations from data/conversations.ron
-//if the last tweet in any conversation's id matched the input you can just  return that conversation
 
 pub async fn load_conversation_from_tweet_id(tweet_id: u64) -> Vec<Tweet> {
     match io::read::conversations_string_from_ron() {

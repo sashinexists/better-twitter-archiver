@@ -27,3 +27,8 @@ pub fn user_conversations_string_from_ron(twitter_handle: &str) -> Result<String
     let file_path: &str = &format!("data/user-conversations_{twitter_handle}.ron");
     string_from_ron(file_path)
 }
+
+pub fn users_string_from_ron() -> Result<String, std::io::Error> {
+    let file_path: &str = &format!("data/users.ron");
+    string_from_ron(file_path)
+}

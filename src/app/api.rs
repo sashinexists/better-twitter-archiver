@@ -1,5 +1,6 @@
 use twitter_v2::authorization::BearerToken;
 use twitter_v2::data::ReferencedTweetKind::RepliedTo;
+use twitter_v2::id::NumericId;
 use twitter_v2::query::{TweetField, UserField};
 use twitter_v2::{Tweet, TwitterApi, User};
 
@@ -78,6 +79,18 @@ pub async fn get_user_by_twitter_handle(twitter_handle: &str) -> User {
     load_api()
         .await
         .get_user_by_username(twitter_handle)
+        .user_fields([UserField::Username, UserField::Description])
+        .send()
+        .await
+        .expect("This user should exist")
+        .into_data()
+        .expect("Failure to open Option<User>")
+}
+
+pub async fn get_user_by_id(id: u64) -> User {
+    load_api()
+        .await
+        .get_user(id)
         .user_fields([UserField::Username, UserField::Description])
         .send()
         .await

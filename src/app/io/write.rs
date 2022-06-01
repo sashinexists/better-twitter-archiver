@@ -69,6 +69,7 @@ pub fn tweets_to_ron(tweets: &mut Vec<Tweet>) {
 }
 
 pub fn user_info_to_ron(user: &User, twitter_handle: &str) {
+    user_to_users_ron(user);
     println!("Creating new file \"data/user-info_{twitter_handle}.ron\"");
     fs::write(
         &format!("data/user-info_{twitter_handle}.ron"),
@@ -105,4 +106,37 @@ pub fn user_conversations_to_ron(conversations: &Vec<Vec<Tweet>>, twitter_handle
     .expect(&format!(
         "Failed to write conversations for @{twitter_handle} to \"data/user-conversations_{twitter_handle}.ron"
     ));
+}
+
+pub fn user_to_users_ron(user: &User) {
+    match fs::read_to_string("data/users.ron") {
+        Ok(users_from_ron_string) => {
+            let mut users_from_ron: Vec<User> = ron::from_str(&users_from_ron_string)
+                .expect("Failed to read users from \"data/users.ron\"");
+            if !users_from_ron
+                .iter()
+                .any(|user_from_ron| user.id == user_from_ron.id)
+            {
+                users_from_ron.push(user.clone())
+            }
+            let username = user.username.clone();
+            println!("Writing @{username} to \"data/users.ron\"");
+            fs::write(
+                "data/users.ron",
+                ron::ser::to_string_pretty(&users_from_ron, ron::ser::PrettyConfig::new())
+                    .expect("Failed to parse users_from_ron back into a string"),
+            )
+            .expect("Failed to write to \"data/users.ron\"");
+        }
+        Err(_error) => {
+            println!("Creating new file \"data/users.ron\"");
+            let users = vec![user];
+            fs::write(
+                "data/users.ron",
+                ron::ser::to_string_pretty(&users, ron::ser::PrettyConfig::new())
+                    .expect("Failed to parse user into a ron string"),
+            )
+            .expect("Failed to create a new \"data/users.ron\"")
+        }
+    }
 }
