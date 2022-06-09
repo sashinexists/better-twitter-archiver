@@ -1,0 +1,151 @@
+[
+    [
+        (
+            id: "1533553945733304320",
+            text: "@DKedmey @sapinker @Gena_I_Gorlin @DavidDeutschOxf @richard_landes @MattiFriedman @NeilRogachevsky This \"projection project\" is of crucial importance in the fight against Israel delegitimization. Most BDS followers are the gullible and misinformed, who go for \"\'progressives\' cannot all be wrong\". Only a credible explanation of WHY they ARE wrong would sway back the gullible.",
+            author_id: Some("3363584909"),
+            conversation_id: Some("1532581714333028352"),
+            created_at: Some("2022-06-05T20:58:47Z"),
+            referenced_tweets: Some([
+                (
+                    type: replied_to,
+                    id: "1532842651875254273",
+                ),
+            ]),
+        ),
+        (
+            id: "1532842651875254273",
+            text: "@yudapearl Calling on psychologists, cognitive scientists, historians &amp; iconoclasts to weight in on the above “projection”-hypothesis.\n\nWhat do you think?\n\n@sapinker @Gena_I_Gorlin @DavidDeutschOxf @richard_landes @MattiFriedman @NeilRogachevsky \n\netc.",
+            author_id: Some("180404377"),
+            conversation_id: Some("1532581714333028352"),
+            created_at: Some("2022-06-03T21:52:21Z"),
+            referenced_tweets: Some([
+                (
+                    type: replied_to,
+                    id: "1532581714333028352",
+                ),
+            ]),
+        ),
+        (
+            id: "1532581714333028352",
+            text: "Brilliant! This is the most convincing explanation I\'ve heard. It does not lean on \"antisemitism\", not even a latent one, and it explains why Asian-American departments are the first to slander Israel as the source of absolute evil. We need to study the anatomy of \"projection\". https://t.co/XJ6sMjBghd",
+            author_id: Some("3363584909"),
+            conversation_id: Some("1532581714333028352"),
+            created_at: Some("2022-06-03T04:35:29Z"),
+            referenced_tweets: Some([
+                (
+                    type: quoted,
+                    id: "1532427944705945600",
+                ),
+            ]),
+        ),
+    ],
+    [
+        (
+            id: "1533471735357374464",
+            text: "@databacked101 their sons in the war, nor faces of orphans of fallen Russian soldiers for fear of raising sympathy for Putin is not doing his/her duty as a journalist.\n2/2",
+            author_id: Some("3363584909"),
+            conversation_id: Some("1533214351590494208"),
+            created_at: Some("2022-06-05T15:32:06Z"),
+            referenced_tweets: Some([
+                (
+                    type: replied_to,
+                    id: "1533469813053394944",
+                ),
+            ]),
+        ),
+        (
+            id: "1533469813053394944",
+            text: "@databacked101 I love this comparison, because Putin\'s declaration that Ukraine is not a legitimate country matches Palestinian declaration that Israel is not legitimate. But forgetting this parallel, a journalist stationed in Russia and wouldn\'t show faces of Russian mothers who lost \n1/2",
+            author_id: Some("3363584909"),
+            conversation_id: Some("1533214351590494208"),
+            created_at: Some("2022-06-05T15:24:28Z"),
+            referenced_tweets: Some([
+                (
+                    type: replied_to,
+                    id: "1533406769187258373",
+                ),
+            ]),
+        ),
+        (
+            id: "1533406769187258373",
+            text: "@yudapearl I will give you the universality argument; would you consider sensible to treat Russia and Ukraine on an equal footing in that sense?",
+            author_id: Some("1044216987604398080"),
+            conversation_id: Some("1533214351590494208"),
+            created_at: Some("2022-06-05T11:13:57Z"),
+            referenced_tweets: Some([
+                (
+                    type: replied_to,
+                    id: "1533353470283067392",
+                ),
+            ]),
+        ),
+        (
+            id: "1533353470283067392",
+            text: "@databacked101 No free lunch! Humanity not-shown is humanity denied.",
+            author_id: Some("3363584909"),
+            conversation_id: Some("1533214351590494208"),
+            created_at: Some("2022-06-05T07:42:10Z"),
+            referenced_tweets: Some([
+                (
+                    type: replied_to,
+                    id: "1533329907467558913",
+                ),
+            ]),
+        ),
+        (
+            id: "1533329907467558913",
+            text: "@yudapearl nobody is denying the humanity of the Israeli people, the way the Israeli authorities dehumanize the Palestinians",
+            author_id: Some("1044216987604398080"),
+            conversation_id: Some("1533214351590494208"),
+            created_at: Some("2022-06-05T06:08:32Z"),
+            referenced_tweets: Some([
+                (
+                    type: replied_to,
+                    id: "1533214351590494208",
+                ),
+            ]),
+        ),
+        (
+            id: "1533214351590494208",
+            text: "I have humbly asked: In her 25 yrs of covering the Middle East, has Abu Aqleh once described the human face of Israeli society? How many times has she portrayed an Israeli child or a grandmother or any human feature of 8 million people trapped in that conflict? https://t.co/1GYHaxHoME",
+            author_id: Some("3363584909"),
+            conversation_id: Some("1533214351590494208"),
+            created_at: Some("2022-06-04T22:29:21Z"),
+            referenced_tweets: Some([
+                (
+                    type: quoted,
+                    id: "1533205689555898376",
+                ),
+            ]),
+        ),
+    ],
+    [
+        (
+            id: "1533677085545287680",
+            text: "@Ostrov_A @bobjcarr Save your questions, Professor @bobjcarr. No one will call you anti-Semitic again. We have a new title for those who make vile allegations of \"apartheid\" and attribute a few racist shouts to 40,000 peaceful dancers. We call them Zionophobes, something they can\'t deny.",
+            author_id: Some("3363584909"),
+            conversation_id: Some("1533649451784491008"),
+            created_at: Some("2022-06-06T05:08:06Z"),
+            referenced_tweets: Some([
+                (
+                    type: replied_to,
+                    id: "1533649451784491008",
+                ),
+            ]),
+        ),
+        (
+            id: "1533649451784491008",
+            text: "Criticizing Israeli government policy is not in itself antisemitic. But applying a double standard to the Jewish state and making vile allegations of apartheid, as @bobjcarr does, *is* antisemitic, no matter how much he spins it. https://t.co/iQMmNj1MSz",
+            author_id: Some("351120282"),
+            conversation_id: Some("1533649451784491008"),
+            created_at: Some("2022-06-06T03:18:17Z"),
+            referenced_tweets: Some([
+                (
+                    type: quoted,
+                    id: "1533630129716740096",
+                ),
+            ]),
+        ),
+    ],
+]

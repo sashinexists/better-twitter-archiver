@@ -42,7 +42,7 @@ pub async fn get_tweets_from_user(user: &User) -> Vec<Tweet> {
     load_api()
         .await
         .get_user_tweets(user.id)
-        .max_results(10) //this line gets the max results
+        .max_results(30) //this line gets the max results
         .tweet_fields([
             TweetField::Attachments,
             TweetField::ReferencedTweets,

@@ -1,14 +1,26 @@
 [
     (
+        id: "3363584909",
+        name: "Judea Pearl",
+        username: "yudapearl",
+        description: Some("Student of causal inference, human reasoning, and history of ideas, all viewed through the sharp lens of artificial intelligence."),
+    ),
+    (
         id: "180404377",
         name: "David Kedmey",
         username: "DKedmey",
         description: Some("Ideas that chain, fork & collide. And their counterfactuals too."),
     ),
     (
-        id: "3363584909",
-        name: "Judea Pearl",
-        username: "yudapearl",
-        description: Some("Student of causal inference, human reasoning, and history of ideas, all viewed through the sharp lens of artificial intelligence."),
+        id: "1044216987604398080",
+        name: "Fact Check",
+        username: "databacked101",
+        description: Some("Just checking the facts"),
+    ),
+    (
+        id: "351120282",
+        name: "Arsen Ostrovsky",
+        username: "Ostrov_A",
+        description: Some("International Human Rights Lawyer ➡\u{fe0f} Focus: #MiddleEast 🌍 , #Israel 🇮🇱, #HumanRights ⚖\u{fe0f}, #DigitalDiplomacy 📲, #Innovation 💡, #Food🍴. My O’s, RT≠E"),
     ),
 ]
