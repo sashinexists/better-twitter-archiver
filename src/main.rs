@@ -116,7 +116,7 @@ fn search(query: &str) -> String {
 #[launch]
 pub fn rocket() -> _ {
     dotenv().ok();
-    let figment = rocket::Config::figment().merge(("port", 4000));
+    let figment = rocket::Config::figment();
     rocket::custom(figment)
         .mount("/", routes![search])
         .mount("/", routes![conversations_by_twitter_handle])
