@@ -154,7 +154,7 @@ pub async fn load_tweets_from_twitter_handle(twitter_handle: &str) -> Vec<Tweet>
         Err(_error) => {
             println!("Loading @{twitter_handle}'s tweets from Twitter API");
             let mut tweets =
-                api::get_tweets_from_user(&load_user_from_twitter_handle(twitter_handle).await)
+                api::get_all_tweets_from_user(&load_user_from_twitter_handle(twitter_handle).await)
                     .await;
             io::write::user_tweets_to_ron(&tweets, twitter_handle);
             io::write::tweets_to_ron(&mut tweets);

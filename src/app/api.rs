@@ -42,7 +42,61 @@ pub async fn get_tweets_from_user(user: &User) -> Vec<Tweet> {
     load_api()
         .await
         .get_user_tweets(user.id)
-        .max_results(30) //this line gets the max results
+        .max_results(10) //this line gets the max results
+        .tweet_fields([
+            TweetField::Attachments,
+            TweetField::ReferencedTweets,
+            TweetField::AuthorId,
+            TweetField::ConversationId,
+            TweetField::CreatedAt,
+        ])
+        .send()
+        .await
+        .expect("Users tweets not loading")
+        .into_data()
+        .expect("Failure to open option<Vec<Tweet>>")
+}
+
+pub async fn get_all_tweets_from_user(user: &User) -> Vec<Tweet> {
+    let mut output = get_first_hundred_tweets_from_user(user).await;
+    const FIRST_TWEET_ID: u64 = 1012187366587392000; // 1490542591154130947; //@yudapearls first tweet id = 1012187366587392000
+    let mut last_id = output.last().expect("Failed to get last tweet").id.as_u64();
+    let mut i = 1;
+    while i < 32 {
+        output.append(&mut get_tweets_from_user_until_id(user, last_id).await);
+        last_id = output.last().expect("Failed to get last tweet").id.as_u64();
+        println!("Loading tweets up to {i}00");
+        i += 1;
+    }
+
+    output
+}
+
+pub async fn get_first_hundred_tweets_from_user(user: &User) -> Vec<Tweet> {
+    load_api()
+        .await
+        .get_user_tweets(user.id)
+        .max_results(100) //this line gets the max results
+        .tweet_fields([
+            TweetField::Attachments,
+            TweetField::ReferencedTweets,
+            TweetField::AuthorId,
+            TweetField::ConversationId,
+            TweetField::CreatedAt,
+        ])
+        .send()
+        .await
+        .expect("Users tweets not loading")
+        .into_data()
+        .expect("Failure to open option<Vec<Tweet>>")
+}
+
+pub async fn get_tweets_from_user_until_id(user: &User, id: u64) -> Vec<Tweet> {
+    load_api()
+        .await
+        .get_user_tweets(user.id)
+        .max_results(100) //this line gets the max results
+        .until_id(id)
         .tweet_fields([
             TweetField::Attachments,
             TweetField::ReferencedTweets,
